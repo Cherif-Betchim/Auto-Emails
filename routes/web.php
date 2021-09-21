@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\DateInformerMail;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,4 +17,15 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/home', function () {
     return view('welcome');
+});
+
+Route::get('/email', function () {
+    Mail::to('email@email.com')->send(new DateInformerMail());
+    return new DateInformerMail();
+});
+
+
+
+Route::get('/test', function () {
+    return new DateInformerMail();
 });
