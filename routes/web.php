@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\DateInformerMail;
+use App\Http\Controllers\EmailsController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -15,17 +17,18 @@ use App\Mail\DateInformerMail;
 |
 */
 
-Route::get('/home', function () {
+Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/email', function () {
-    Mail::to('email@email.com')->send(new DateInformerMail());
-    return new DateInformerMail();
-});
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth'])->name('dashboard');
+
+require __DIR__.'/auth.php';
+
+Route::get('/all-receivers',[EmailsController::class,'getAllEmails'])->name('receiver.getAllreceiverusingmodel');
 
 
 
-Route::get('/test', function () {
-    return new DateInformerMail();
-});
+Route::post('/createe',[EmailsController::class,'store'])->name('add a new receiver');

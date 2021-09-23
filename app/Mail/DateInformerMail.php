@@ -27,7 +27,14 @@ class DateInformerMail extends Mailable
      * @return $this
      */
     public function build()
+    
     {
-        return $this->markdown('emails.DateInformer');
+        $pause = true;
+        if($pause == false){
+            
+            $ldate = date('Y-m-d H:i:s');
+            return $this->markdown('emails.DateInformer',["todayDate"=>$ldate]);
+        }
+        
     }
 }
