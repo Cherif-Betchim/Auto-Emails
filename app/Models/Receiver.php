@@ -10,10 +10,11 @@ class Receiver extends Model
     use HasFactory;
 
     protected $receiver = 'receivers';
-
+    public $timestamp = false;
     protected $fillable = [
         'email',
         'intervalM',
+        'satus'
     ];
 
 }
