@@ -28,8 +28,9 @@ Route::get('/dashboard', function () {
 
 require __DIR__.'/auth.php';
 
-Route::get('/all-receivers',[EmailsController::class,'getAllEmails'])->name('receiver.getAllreceiverusingmodel');
+//Route::get('/all-receivers',[EmailsController::class,'getAllEmails'])->name('receiver.getAllreceiverusingmodel');
 
+Route::view('/all-receivers','auth.receivers');
 
 
 Route::post('/createe',[EmailsController::class,'store'])->name('add a new receiver');

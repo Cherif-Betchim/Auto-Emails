@@ -9,13 +9,7 @@
         "prod": "npm run production",
         "production": "mix --production"
     },
-    "devDependencies": {
-        "@inertiajs/inertia": "^0.10.0",
-        "@inertiajs/inertia-vue3": "^0.5.1",
-        "@inertiajs/progress": "^0.2.6",
-        "@tailwindcss/forms": "^0.2.1",
-        "@vue/compiler-sfc": "^3.0.5",
-        "alpinejs": "^2.7.3",
+    "devDependencies": {   
         "autoprefixer": "^10.1.0",
         "axios": "^0.21",
         "bootstrap": "^4.6.0",
@@ -29,8 +23,7 @@
         "sass": "^1.32.11",
         "sass-loader": "^11.0.1",
         "tailwindcss": "^2.0.2",
-        "vue": "^3.0.5",
-        "vue-loader": "^16.1.2"
+        "vue": "^2.5.17"
     },
     "dependencies": {
         "bootstrap": "^5.1.1"
