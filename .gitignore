@@ -13,3 +13,7 @@ npm-debug.log
 yarn-error.log
 /.idea
 /.vscode
+Ten_minutes_scheduler.log
+One_Minute_scheduler.log
+Five_minutes_scheduler.log
+scheduler.log

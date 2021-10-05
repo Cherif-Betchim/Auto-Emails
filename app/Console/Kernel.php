@@ -24,7 +24,14 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        // $schedule->command('inspire')->hourly();
+         $schedule->command('command:oneMinSender')->everyMinute()
+            ->appendOutputTo('One_Minute_scheduler.log');
+
+         $schedule->command('command:fiveMinsSender')->everyFiveMinutes()
+             ->appendOutputTo('Five_minutes_scheduler.log');
+
+         $schedule->command('command:tenMinsSender')->everyTenMinutes()
+             ->appendOutputTo('Ten_minutes_scheduler.log');
     }
 
     /**
